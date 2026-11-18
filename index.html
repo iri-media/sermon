@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이리신광교회 설교 영상</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--line:rgba(255,255,255,.28);--gold:#C9A86A;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:transparent;}
+  html.solo,html.solo body{background:#1F2F46;}
+  html,body{height:100%;overflow:hidden;font-family:"NanumSquareNeo","Pretendard","Noto Sans KR",sans-serif;color:#fff}
+  .wrap{display:flex;gap:30px;height:100%}
+  .player{flex:0 0 72%;position:relative;background:#0d1626}
+  .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .menu{flex:1;display:flex;flex-direction:column;gap:0}
+  .menu a,.menu button{flex:1;display:flex;align-items:center;gap:18px;padding:0 30px;background:transparent;border:1px solid var(--line);margin-top:-1px;color:#fff;font-family:inherit;font-size:21px;font-weight:700;line-height:1.3;letter-spacing:-.5px;text-align:left;cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s}
+  .menu :first-child{margin-top:0}
+  .menu svg{width:30px;height:30px;flex:0 0 30px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .menu .tab:hover,.menu a:hover{background:rgba(255,255,255,.08)}
+  .menu .tab.on{background:rgba(201,168,106,.18);border-color:var(--gold);position:relative;z-index:1}
+  .menu .tab.on svg{stroke:var(--gold)}
+  .menu .ext span:last-child{margin-left:auto;opacity:.6;font-size:18px}
+  .menu .tab .now{margin-left:auto;font-size:13px;font-weight:700;color:var(--gold);display:none}
+  .menu .tab.on .now{display:block}
+  /* 태블릿·모바일: 영상 위, 메뉴 아래 */
+  @media (max-width:900px){
+    html,body{overflow:auto}
+    .wrap{flex-direction:column;gap:14px;height:auto}
+    .player{flex:none;width:100%;aspect-ratio:16/9}
+    .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .menu a,.menu button{margin:0;height:62px;padding:0 16px;font-size:17px;gap:12px;border-radius:0}
+    .menu .tab .now{display:none!important}
+    .menu svg{width:24px;height:24px;flex-basis:24px}
+  }
+  @media (max-width:560px){
+    .menu{grid-template-columns:1fr 1fr}
+    .menu a,.menu button{height:52px;font-size:14.5px;padding:0 12px;gap:9px}
+    .menu svg{width:21px;height:21px;flex-basis:21px}
+    .menu .ext span:last-child{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="player"><iframe id="yt" title="설교 영상" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <nav class="menu">
+    <button class="tab" data-list="PLKUEUtPT1RvCR3LseV0SqA6Jm_49cULWW">
+      <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 11h7M9 15h7"/></svg><span>주일예배 설교</span><span class="now">재생 중</span></button>
+    <button class="tab" data-list="PLKUEUtPT1RvBzTGW01zb-_Cw5zHXv1i4w">
+      <svg viewBox="0 0 24 24"><path d="M12 3c-2 3-5 5-5 9a5 5 0 0 0 10 0c0-4-3-6-5-9z"/><path d="M12 21v-3"/></svg><span>삼일기도회</span><span class="now">재생 중</span></button>
+    <button class="tab" data-list="PLKUEUtPT1RvDDQ-BDOo7CMXpQSej2GQVk">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg><span>경배와 찬양</span><span class="now">재생 중</span></button>
+    <button class="tab" data-list="PLKUEUtPT1RvAZdKTkkmnGO7OKTGDHvkwF">
+      <svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span>찬양대</span><span class="now">재생 중</span></button>
+    <a class="ext" href="https://www.skch.or.kr/main/sub.html?pageCode=144" target="_top">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg><span>주일찬양예배</span><span>›</span></a>
+    <a class="ext" href="https://www.skch.or.kr/main/sub.html?pageCode=133" target="_top">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>설교 전체보기</span><span>›</span></a>
+  </nav>
+</div>
+<script>
+  // 홈페이지 안(아이프레임)에서는 배경을 투명하게, 파일을 직접 열면 남색 배경으로 보여줍니다.
+  if (window.self === window.top) document.documentElement.classList.add('solo');
+  if (location.protocol === 'file:') document.getElementById('yt').insertAdjacentHTML('afterend','<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;background:#0d1626;color:#cfd8e6;font-size:18px;line-height:1.7">내 컴퓨터에서 파일로 열면 유튜브가 재생을 막습니다(오류 153).<br>호스팅에 올린 주소로 열면 정상 재생됩니다.</div>');
+  // 재생목록은 유튜브에서 '최신 영상이 맨 위'로 정렬돼 있어야 최신 설교가 먼저 나옵니다.
+  const yt = document.getElementById('yt');
+  const tabs = [...document.querySelectorAll('.tab')];
+  function show(btn){
+    tabs.forEach(t => t.classList.toggle('on', t === btn));
+    yt.src = 'https://www.youtube.com/embed/videoseries?list=' + btn.dataset.list + '&rel=0';
+  }
+  tabs.forEach(t => t.addEventListener('click', () => show(t)));
+  show(tabs[0]);
+</script>
+</body>
+</html>
